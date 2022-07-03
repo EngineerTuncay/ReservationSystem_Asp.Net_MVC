@@ -1,0 +1,80 @@
+﻿
+@model List<ReservationSystem.Models.Kisiler>
+
+@using ReservationSystem.Models;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <link href="~/StyleSheet.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Index</title>
+</head>
+<body>
+
+    <h1 class="Baslik"> Rezervasyon Sistemine Hoşgeldiniz... </h1>
+
+    <table class="DisTabloOzellikleri">
+        <tr>
+            <td>
+                <table class="IcTabloBir">
+                    <tr>
+                        <!-- Kullanıcı için başlıklar -->
+                        <td class="TdUzunlukAyari"> Misafir İsmi: </td>
+                        <td class="TdUzunlukAyari"> Misafir İletişim: </td>
+                        <td class="TdUzunlukAyari"> Masa No: </td>
+                        <td class="TdUzunlukAyari"> Kişi Sayısı: </td>
+                        <td class="TdUzunlukAyari"> Ziyaret Saati: </td>
+                    </tr>
+                    <!-- foreach ile Ad, TelNo... bir tablo şeklinde kullanıcıya gösterilir -->
+                    @foreach (var Kisi in (List<Kisiler>)Model)
+                    {
+                        <tr>
+                            <td class="TdUzunlukAyari"> @Kisi.Ad </td>
+                            <td class="TdUzunlukAyari"> @Kisi.TelNo </td>
+                            <td class="TdUzunlukAyari"> @Kisi.MasaNo </td>
+                            <td class="TdUzunlukAyari"> @Kisi.KisiSayisi </td>
+                            <td class="TdUzunlukAyari"> @Kisi.SaatAraligi </td>
+                            <!-- Home/KisiGüncelle ile güncelleme Controller'ına geçilir fakar geçerken Kisi.id sayesinde hangi üyenin güncelleneceği Controller'a taşınır.  -->
+                            <td class="TdUzunlukAyari"> <a href="/Home/KisiGuncelle/@Kisi.id" role="button" style="width:80%; margin: 10% 10% 1% 10%; font-weight:bold; color: black"> Güncelle </a> </td>
+                            <!-- KişiSil Controller'ına kişi id'si taşınarak veri tabaınından silme işlemi gerçekleştirilir. -->
+                            <td class="TdUzunlukAyari"> <a href="/Home/KisiSil/@Kisi.id" role="button" style="width:80%; margin: 1% 10% 1% 10%; font-weight:bold; color: black"> Sil </a> </td>
+                        </tr>
+                    }
+                    <tr>
+
+
+                    <tr>
+                        <td style="height:50px;">
+                            <!--Kişi ekle sayfsına geçilir-->
+                            <a href="/Home/KisiEkle" role="button" style="width:80%; margin: 10% 10% 1% 10%; font-weight:bold; color: black"> Yeni Misafir Ekle </a>
+                        </td>
+                    </tr>
+                    
+
+                </table>
+            </td>
+            <td>
+                <table class="IcTabloIki">
+                    <tr>
+                        <td> <img src="~/Yemek Masası.jpg" class="GorselOzellikleri" /> </td>
+                        <td><img src="~/Yemek Masası.jpg" class="GorselOzellikleri" /></td>
+                    </tr>
+                    <tr>
+                        <td><img src="~/Yemek Masası.jpg" class="GorselOzellikleri" /></td>
+                        <td><img src="~/Yemek Masası.jpg" class="GorselOzellikleri" /></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

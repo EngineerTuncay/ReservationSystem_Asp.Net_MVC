@@ -1,0 +1,102 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <link href="~/StyleSheet.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Index</title>
+</head>
+<body>
+
+    <h1 class="Baslik"> Rezervasyon Sistemine Hoşgeldiniz... </h1>
+
+    <table class="DisTabloOzellikleri">
+        <tr>
+            <td style="align-items:center;">
+                <!-- HTML.BegimForm ile aşağıda yer alan Ad, TelNo vs bilgileri "KisiEkle","Home" Controller'a gönderilir' -->
+                @using (Html.BeginForm("KisiEkle","Home",FormMethod.Post))
+                {
+                <table class="IcTabloBir">
+                    <tr>
+                        <td class="TdUzunlukAyari"> Misafir İsmi: </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <!-- "Ad" bir değişken niteliği taşımaktadır, null ise değeridir. -->
+                            @Html.TextBox("Ad", null)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="TdUzunlukAyari"> Misafir İletişim: </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.TextBox("TelNo", null)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="TdUzunlukAyari"> Masa No: </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.TextBox("KisiSayisi", null)
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="TdUzunlukAyari"> Kişi Sayısı: </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.TextBox("MasaNo", null)
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="TdUzunlukAyari"> Ziyaret Saati: </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.TextBox("SaatAraligi", null)
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <!-- Button ile yukarıdaki bilgiler Controller'a aktarılır' -->
+                            <button type="submit" style="width:100%"> Kaydet </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height:30px;">
+                            <!-- Butaon ile Home/Index sayfasına geçilir -->
+                            <a href="/Home/Index" role="button" style="width:80%; margin: 10% 10% 1% 10%; font-weight:bold; color: black"> Misafir Listesi </a>
+                        </td>
+                    </tr>
+                </table>
+                }
+            </td>
+            <td>
+                <table class="IcTabloIki">
+                    <tr>
+                        <td> <img src="~/Yemek Masası.jpg" class="GorselOzellikleri" /> </td>
+                        <td><img src="~/Yemek Masası.jpg" class="GorselOzellikleri" /></td>
+                    </tr>
+                    <tr>
+                        <td><img src="~/Yemek Masası.jpg" class="GorselOzellikleri" /></td>
+                        <td><img src="~/Yemek Masası.jpg" class="GorselOzellikleri" /></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
