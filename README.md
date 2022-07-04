@@ -14,4 +14,6 @@ Güncelleme ekranında kişinin mevcut bilgileri karşımıza getirilir ve isten
 
 Yeni Kişi Ekle ekranından yeni misafir ekleyerek veri tabanına kaydı yapılır.
 
-
+# C# ile Windows App ve Web(Asp.net - Asp.net MVC) projenizi uygun bir maliyete yaptırmak için;
+# Wp: +90 542 667 08 99
+# Email: tuncayuslu1997@gmail.com
